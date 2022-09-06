@@ -4,7 +4,43 @@
     </head>
     <body>
         <script>
-            
+            function getComputerChoice () {
+                let selector = ["Rock", "Paper", "Scissors"];
+                let selectedWord = selector[Math.floor(Math.random() * selector.length)];
+                return selectedWord;
+            }
+            function playRound (playerSelection, copmuterSelection) {
+
+                if(playerSelection == "rock" && computerSelection == "scissor") {
+                    return (`You won, ${playerSelection} beats ${computerSelection}`);
+                        } 
+                        else if (playerSelection == "rock" && computerSelection == "paper") {
+                    return (`You lose, ${computerSelection} beats ${playerSelection}`);
+                        } 
+                        else if (playerSelection == "rock" && computerSelection == "rock") {
+                    console.log ("Draw");
+                        }
+                        else if (playerSelection == "paper" && computerSelection == "scissor") {
+                    console.log (`You lose, ${computerSelection} beats ${playerSelection}`);
+                        } 
+                        else if (playerSelection == "paper" && computerSelection == "rock") {
+                    console.log (`You won, ${playerSelection} beats ${computerSelection}`);
+                        }
+                        else if (playerSelection == "paper" && computerSelection == "paper") {
+                    console.log ("Draw");
+                        }
+                        else if (playerSelection == "scissor" && computerSelection == "scissor") {
+                    console.log ("Draw");
+                        }
+                        else if (playerSelection == "scissor" && computerSelection == "rock") {
+                    console.log (`You lose, ${computerSelection} beats ${playerSelection}`);
+                        }
+                        else (playerSelection == "scissor" && computerSelection == "paper") {
+                    console.log (`You won, ${playerSelection} beats ${computerSelection}`);
+                        }
+            const playerSelection = "rock";
+            const computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection));
         </script>
     </body>
 </html>
