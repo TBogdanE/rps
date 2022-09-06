@@ -5,42 +5,71 @@
     <body>
         <script>
             function getComputerChoice () {
-                let selector = ["Rock", "Paper", "Scissors"];
+                let selector = ["rock", "paper", "sscissors"];
                 let selectedWord = selector[Math.floor(Math.random() * selector.length)];
                 return selectedWord;
             }
+
             function playRound (playerSelection, copmuterSelection) {
+                playerSelection = playerSelection.toLowerCase();
 
                 if(playerSelection == "rock" && computerSelection == "scissor") {
                     return (`You won, ${playerSelection} beats ${computerSelection}`);
+                    playerScore++;
                         } 
                         else if (playerSelection == "rock" && computerSelection == "paper") {
                     return (`You lose, ${computerSelection} beats ${playerSelection}`);
+                    computerScore++;
                         } 
                         else if (playerSelection == "rock" && computerSelection == "rock") {
-                    console.log ("Draw");
+                    return ("Draw");
+                    computerScore++;
+                    playerScore++;
                         }
                         else if (playerSelection == "paper" && computerSelection == "scissor") {
-                    console.log (`You lose, ${computerSelection} beats ${playerSelection}`);
+                    return (`You lose, ${computerSelection} beats ${playerSelection}`);
+                    computerScore++;
                         } 
                         else if (playerSelection == "paper" && computerSelection == "rock") {
-                    console.log (`You won, ${playerSelection} beats ${computerSelection}`);
+                    return (`You won, ${playerSelection} beats ${computerSelection}`);
+                    playerScore++;
                         }
                         else if (playerSelection == "paper" && computerSelection == "paper") {
                     console.log ("Draw");
+                    computerScore++;
+                    playerScore++;
                         }
                         else if (playerSelection == "scissor" && computerSelection == "scissor") {
                     console.log ("Draw");
+                    computerScore++;
+                    playerScore++;
                         }
                         else if (playerSelection == "scissor" && computerSelection == "rock") {
                     console.log (`You lose, ${computerSelection} beats ${playerSelection}`);
+                    computerScore++;
                         }
-                        else (playerSelection == "scissor" && computerSelection == "paper") {
+                        else (playerSelection == "scissor" && computerSelection == "paper"); {
                     console.log (`You won, ${playerSelection} beats ${computerSelection}`);
+                    playerScore++;
                         }
+                    }
+
+                    function game(player, computer) {
+                        for (i = 0; i < 5; i++) {
+                            playRound(player, computer);
+                        }
+                        if(playerScore > computerScore) {
+                            console.log(`You won with ${playerScore}, ${playerScore - computerScore} over the computer `);
+                        } else if (playerScore < computerScore) {
+                            console.log(`You lose with ${playerScore}, computer has ${computerScore - playerScore} over you `);
+                        } else {
+                            console.log("Tie!");
+                    }
+            
+            let playerScore = 0, computerScore = 0;
             const playerSelection = "rock";
             const computerSelection = getComputerChoice();
-            console.log(playRound(playerSelection, computerSelection));
+            console.log(game(playerSelection, computerSelection));
         </script>
     </body>
 </html>
