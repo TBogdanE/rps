@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: yellow;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em;
+    order: 1;
+}
+
+#title {
+    font-size: 2em;
+    color: rgb(52, 52, 52);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+#usrinpsct {
+    display: flex;
+    flex-direction: row;
+    order: 3;
+    justify-content: space-around;
+}
+
+#titleusrinp {
+    display: flex;
+    order: 2;
+    justify-content: center;
+    margin: 3em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#imgrock {
+    order: 1;
+}
+
+#imgpaper {
+    order: 2;
+}
+
+#imgscissor {
+    order: 3;
+}
+
+.propimgrps {
+    border-radius: 10px;
+}
+
+#pcinptitle {
+    display: flex;
+    justify-content: center;
+    order: 4;
+    margin: 3em;
+}
+
+#pcinpsct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    order: 5;
+}
+
+#imgpch {
+    border-radius: 10px;
+    order: 2;
+}
+
+#yourscore {
+    order: 1;
+}
+
+#pcscore {
+    order: 3;
+}
